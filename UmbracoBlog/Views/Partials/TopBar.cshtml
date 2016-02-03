@@ -2,13 +2,20 @@
 
 @* TODO: Make this float at the top always *@
 
+@{
+    var latestPost =  @Model.Content.AncestorOrSelf(1).DescendantsOrSelf("BlogPost").OrderBy(x => x.CreateDate).LastOrDefault();
+}
+
 <div class="container navbar bg-info">
     <div class="navbar-left">
         <h1 class="navbar-text"><strong>BLOG</strong></h1>
     </div>
     <nav class="navbar-right navbar-brand">
         <a class="navbar-text" href="@Model.Content.AncestorOrSelf(1).Url">Home</a>
-        <a class="navbar-text" href="#">Latest Post</a>
+        @if(latestPost != null)
+        {
+            <a class="navbar-text" href="@latestPost.Url">Latest Post</a>
+        }
         <a class="navbar-text" href="#">About</a>
     </nav>
 </div>
