@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@* TODO: Make this float at the top always *@
+
+<div class="container navbar bg-info">
+    <div class="navbar-left">
+        <h1 class="navbar-text"><strong>BLOG</strong></h1>
+    </div>
+    <nav class="navbar-right navbar-brand">
+        <a class="navbar-text" href="@Model.Content.AncestorOrSelf(1).Url">Home</a>
+        <a class="navbar-text" href="#">Latest Post</a>
+        <a class="navbar-text" href="#">About</a>
+    </nav>
+</div>
