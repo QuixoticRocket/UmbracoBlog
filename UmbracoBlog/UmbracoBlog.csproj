@@ -394,9 +394,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
-    <Content Include="ApplicationInsights.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -2842,14 +2839,18 @@
     <Content Include="uSync\data\DataType\Label.config" />
     <Content Include="uSync\data\DataType\ListViewContent.config" />
     <Content Include="uSync\data\DataType\ListViewMedia.config" />
-    <Content Include="uSync\data\DataType\ListViewMembers.config" />
+    <Content Include="uSync\data\DataType\ListViewMembers.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="uSync\data\DataType\MediaPicker.config" />
     <Content Include="uSync\data\DataType\MemberPicker.config" />
     <Content Include="uSync\data\DataType\MultipleMediaPicker.config" />
     <Content Include="uSync\data\DataType\Numeric.config" />
     <Content Include="uSync\data\DataType\Radiobox.config" />
     <Content Include="uSync\data\DataType\RelatedLinks.config" />
-    <Content Include="uSync\data\DataType\RichtextEditor.config" />
+    <Content Include="uSync\data\DataType\RichtextEditor.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="uSync\data\DataType\Tags.config" />
     <Content Include="uSync\data\DataType\Textarea.config" />
     <Content Include="uSync\data\DataType\Textstring.config" />
