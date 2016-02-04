@@ -5,6 +5,9 @@
 
 div.blog-summary{
     position: relative;
+    border-bottom: 1px solid grey; 
+    margin-bottom: 10px;
+    padding-bottom: 0px;
 }
 
 div.blog-summary div.fader {
@@ -13,11 +16,12 @@ div.blog-summary div.fader {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 110px;
+    height: 115px;
     overflow: hidden;
-    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 80%);
-    background-image: -o-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 80%);
-    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%,#ffffff 80%);
+    background-image: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 87%);
+    background-image: -o-linear-gradient(top, rgba(255,255,255,0) 0%, #fff 87%);
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0) 0%,#ffffff 87%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFFFF', endColorstr='#FFFFFFFF', GradientType=0);
 }
+
