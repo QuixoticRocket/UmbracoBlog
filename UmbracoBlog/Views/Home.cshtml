@@ -6,14 +6,17 @@
     <div class="col-md-2 pull-left"></div>
     <div class="col-md-2 pull-right"></div>
     <div class="col-md-8">
-        @foreach (var item in CurrentPage.Descendants("BlogPost"))
+        @{ 
+            var last10 = Model.Content.Descendants("BlogPost").OrderByDescending(b => b.CreateDate).Take(10);
+        }
+        @foreach (var item in last10)
         {
             <div class="container-fluid blog-summary">
                 <h1>
                     @item.Name
                 <small> - @item.CreateDate.ToString()</small>
             </h1>
-            @Umbraco.Truncate(item.bodyText, 600)
+            @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
             <div class="fader">
             </div>
         </div>

@@ -25,3 +25,7 @@ div.blog-summary div.fader {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFFFF', endColorstr='#FFFFFFFF', GradientType=0);
 }
 
+img {
+    margin: 5px;
+}
+

@@ -12,7 +12,7 @@
         </div>
         <div class="bg-info">
             @{ 
-                string[] tags = CurrentPage.contentTags != null ? CurrentPage.contentTags.Split(',') : new string[0];
+                string[] tags = string.IsNullOrWhiteSpace(CurrentPage.contentTags) ? new string[0] : CurrentPage.contentTags.Split(',');
                 tags = tags.OrderBy(x => x).ToArray();
                 if(tags.Length > 0)
                 {
