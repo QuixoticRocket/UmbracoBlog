@@ -7,6 +7,29 @@
     <div class="col-md-2 pull-left"></div>
     <div class="col-md-2 pull-right"></div>
     <div class="col-md-8">
-        @CurrentPage.bodyText
+        <div>
+            @CurrentPage.bodyText
+        </div>
+        <div class="bg-info">
+            @{ 
+                string[] tags = CurrentPage.contentTags != null ? CurrentPage.contentTags.Split(',') : new string[0];
+                tags = tags.OrderBy(x => x).ToArray();
+                if(tags.Length > 0)
+                {
+                    <span>Tags: </span>
+                    for (int i = 0; i < tags.Length; i++)
+                    {
+                        if (i != tags.Length - 1)
+                        {
+                            <span><a href="~/Search?query=@tags[i]">@tags[i]</a>, </span>
+                        }
+                        else
+                        {
+                            <span><a href="~/Search?query=@tags[i]">@tags[i]</a></span>
+                        }
+                    }
+                }
+            }
+        </div>
     </div>
 </div>
