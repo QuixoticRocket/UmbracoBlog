@@ -10,13 +10,16 @@
         @foreach (var item in last10)
         {
             <div class="container-fluid blog-summary">
-                <h1>
-                    @item.Name
-                    <small> - @item.CreateDate.ToString()</small>
-                </h1>
-                @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
-                <div class="fader">
-                </div>
+                <a href="@item.Url">
+                    <h1>
+                        @item.Name
+                        <small> - @item.CreateDate.ToString()</small>
+                    </h1>
+
+                    @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
+                    <div class="fader">
+                    </div>
+                </a>
             </div>
         }
         <div class="container-fluid blog-summary">

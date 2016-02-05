@@ -25,6 +25,21 @@ div.blog-summary {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFFFF', endColorstr='#FFFFFFFF', GradientType=0);
     }
 
+    div.blog-summary a{
+        text-decoration: none;
+    }
+
+    div.blog-summary a:link{
+        color: inherit;
+    }
+    div.blog-summary a:hover{
+        color: inherit;
+        cursor: default;
+    }
+    div.blog-summary a:visited{
+        color: inherit;
+    }
+
 img {
     margin: 5px;
 }
@@ -71,4 +86,10 @@ div.speedbump {
                 -moz-columns: 3 50px;
                 -webkit-columns: 3 50px;
                 columns: 3 50px;
+            }
+
+            div.speedbump div.speedbump-card div.speedbump-content.columns-4 {
+                -moz-columns: 4 38px;
+                -webkit-columns: 4 38px;
+                columns: 4 38px;
             }
