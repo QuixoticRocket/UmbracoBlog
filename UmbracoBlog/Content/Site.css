@@ -55,17 +55,24 @@ div.speedbump {
     display: block;
     background-color: #f8f8f8;
     border-radius: 4px;
+    border: solid 1px #e7e7e7;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
     box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    position: relative;
+    white-space: nowrap;
 }
 
     div.speedbump div.speedbump-card {
         padding-left: 0;
         padding-right: 0;
-        border: solid 1px #e7e7e7;
+        border-left: solid 1px #e7e7e7;
+        border-right: solid 1px #e7e7e7;
+        border-top: solid 1px #e7e7e7;
         min-height: 200px;
         overflow: hidden;
-        display: block;
+        display: inline-block;
+        margin-bottom: -99999px;
+        padding-bottom: 99999px;
     }
 
         div.speedbump div.speedbump-card div.speedbump-header {
@@ -73,6 +80,7 @@ div.speedbump {
             font-size: 24px;
             text-align: center;
             border-bottom: solid 1px #e7e7e7;
+            border-top: solid 1px #e7e7e7;
             display: block;
         }
 
