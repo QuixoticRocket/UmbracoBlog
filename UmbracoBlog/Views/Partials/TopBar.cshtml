@@ -2,6 +2,7 @@
 
 @{
     var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
+    var about = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("AboutPage")).FirstOrDefault();
 }
 
 <div class="navbar navbar-default headingbar">
@@ -16,9 +17,16 @@
 {
     var imageUrl = Umbraco.Media(staticInfoPage.GetPropertyValue<int>("profileImage")).Url;
     <div class="hidden-xs col-xs-offset-10 profile-image-large">
-        <img src="@imageUrl" class="img-responsive img-circle" />
+        @if (about != null)
+        {
+            <a href="@about.Url"><img src="@imageUrl" class="img-responsive img-circle" /></a>
+        }
+        else
+        {
+            <img src="@imageUrl" class="img-responsive img-circle" />
+        }
     </div>
-    <div class="visible-xs col-xs-offset-11 profile-image-small">
+    <div class="visible-xs col-xs-offset-10 profile-image-small">
         <img src="@imageUrl" class="img-responsive img-circle" />
     </div>
 }

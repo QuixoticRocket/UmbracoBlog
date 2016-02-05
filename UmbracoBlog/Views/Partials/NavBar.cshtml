@@ -3,10 +3,10 @@
 @{
     var latestPost = @Model.Content.AncestorOrSelf(1).DescendantsOrSelf("BlogPost").OrderBy(x => x.CreateDate).LastOrDefault();
     var home = @Model.Content.AncestorOrSelf(1);
-    var about = home; //change this when the about page is in place
+    var about = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("AboutPage")).FirstOrDefault();
     bool ishome = home.Url.Equals(CurrentPage.Url);
     bool islatestPost = latestPost.Url.Equals(CurrentPage.Url);
-    bool isabout = false;
+    bool isabout = about.Url.Equals(CurrentPage.Url);
 
     var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
 }
@@ -42,9 +42,10 @@
                     {
                         <li class="@if (islatestPost) { <text>active</text>} "><a href="@latestPost.Url">Latest Post</a></li>
                     }
-                    <li class="@if (isabout) { <text>active</text>}">
-                        <a href="#">About</a>
-                    </li>
+                    @if (about != null)
+                    {
+                        <li class="@if (isabout) { <text>active</text>}"><a href="@about.Url">About</a></li>
+                    }
                 </ul>
                 <form class="navbar-form navbar-left" role="search">
                     <div class="input-group">

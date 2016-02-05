@@ -356,7 +356,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OriginalHomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -3003,6 +3003,8 @@
     <Content Include="Views\FooterLinks.cshtml" />
     <Content Include="Views\Partials\NavBar.cshtml" />
     <Content Include="Views\StaticInformation.cshtml" />
+    <Content Include="Views\AboutPage.cshtml" />
+    <Content Include="uSync\data\DocumentType\master\home\aboutpage\def.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
