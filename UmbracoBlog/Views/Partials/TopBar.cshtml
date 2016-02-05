@@ -1,11 +1,27 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
-@{ 
+@{
     var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
 }
 
 <div class="navbar navbar-default headingbar">
     <div class="container-fluid">
-        <h1>Insightful Comment</h1>
+        <div class="navbar-left text-nowrap">
+            <h1>Insightful Comment</h1>
+        </div>
     </div>
 </div>
+
+@if (staticInfoPage != null && staticInfoPage.HasValue("profileImage"))
+{
+    var imageUrl = Umbraco.Media(staticInfoPage.GetPropertyValue<int>("profileImage")).Url;
+    <div class="hidden-xs col-xs-offset-10 profile-image-large">
+        <img src="@imageUrl" class="img-responsive img-circle" />
+    </div>
+    <div class="visible-xs col-xs-offset-11 profile-image-small">
+        <img src="@imageUrl" class="img-responsive img-circle" />
+    </div>
+}
+
+
+

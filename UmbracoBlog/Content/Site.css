@@ -4,7 +4,7 @@
     background-color: #337ab7;
 }
 
-div.headingbar{
+div.headingbar {
     margin-bottom: 5px;
 }
 
@@ -50,6 +50,30 @@ div.blog-summary {
 p img {
     margin: 5px;
 }
+
+div.profile-image-large {
+    padding: 0px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin-top: -75px;
+    margin-bottom: -25px;
+    z-index: 1000;
+}
+
+div.profile-image-small {
+    padding: 0px;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    margin-top: -60px;
+    margin-bottom: 10px;
+    z-index: 1000;
+}
+
+    div.profile-image-small img {
+        opacity: 0.65;
+    }
 
 div.speedbump {
     padding-left: 0;
