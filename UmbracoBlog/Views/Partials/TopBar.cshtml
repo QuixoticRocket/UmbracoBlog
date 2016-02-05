@@ -1,5 +1,9 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 
+@{ 
+    var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
+}
+
 <div class="navbar navbar-default headingbar">
     <div class="container-fluid">
         <h1>Insightful Comment</h1>

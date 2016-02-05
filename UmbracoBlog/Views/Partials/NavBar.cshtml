@@ -7,6 +7,8 @@
     bool ishome = home.Url.Equals(CurrentPage.Url);
     bool islatestPost = latestPost.Url.Equals(CurrentPage.Url);
     bool isabout = false;
+
+    var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
 }
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -19,7 +21,16 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="@home.Url">Blog</a>
+            @if (staticInfoPage != null && staticInfoPage.HasValue("brandImage"))
+            {
+                <a href="@home.Url">
+                    <img src="@Umbraco.TypedMedia(staticInfoPage.AsDynamic().brandImage).Url" class="navbar-brand" />
+                </a>
+            }
+            else if (staticInfoPage != null && !string.IsNullOrWhiteSpace(staticInfoPage.AsDynamic().siteName))
+            {
+                <a class="navbar-brand" href="@home.Url">@staticInfoPage.AsDynamic().siteName</a>
+            }
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
