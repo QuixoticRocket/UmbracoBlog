@@ -2996,6 +2996,13 @@
     <Content Include="Views\MacroPartials\Image Gallery.cshtml" />
     <Content Include="Views\BlogPost.cshtml" />
     <Content Include="Views\Partials\FooterBar.cshtml" />
+    <Content Include="uSync\data\DocumentType\footerlinks\def.config" />
+    <Content Include="uSync\data\DocumentType\staticinformation\def.config" />
+    <Content Include="uSync\data\Template\footerlinks\FooterLinks.config" />
+    <Content Include="uSync\data\Template\staticinformation\StaticInformation.config" />
+    <Content Include="Views\FooterLinks.cshtml" />
+    <Content Include="Views\Partials\NavBar.cshtml" />
+    <Content Include="Views\StaticInformation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,7 +1,11 @@
 ﻿body {
-    padding-top: 70px;
+    padding-top: 50px;
     padding-bottom: 2px;
     background-color: #337ab7;
+}
+
+div.headingbar{
+    margin-bottom: 5px;
 }
 
 div.blog-summary {
