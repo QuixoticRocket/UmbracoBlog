@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 70px;
     padding-bottom: 2px;
+    background-color: #337ab7;
 }
 
 div.blog-summary {
@@ -25,20 +26,22 @@ div.blog-summary {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00FFFFFF', endColorstr='#FFFFFFFF', GradientType=0);
     }
 
-    div.blog-summary a{
+    div.blog-summary a {
         text-decoration: none;
     }
 
-    div.blog-summary a:link{
-        color: inherit;
-    }
-    div.blog-summary a:hover{
-        color: inherit;
-        cursor: default;
-    }
-    div.blog-summary a:visited{
-        color: inherit;
-    }
+        div.blog-summary a:link {
+            color: inherit;
+        }
+
+        div.blog-summary a:hover {
+            color: inherit;
+            cursor: default;
+        }
+
+        div.blog-summary a:visited {
+            color: inherit;
+        }
 
 img {
     margin: 5px;
@@ -51,6 +54,9 @@ div.speedbump {
     overflow: hidden;
     display: block;
     background-color: #f8f8f8;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
 }
 
     div.speedbump div.speedbump-card {
