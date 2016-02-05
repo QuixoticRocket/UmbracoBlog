@@ -3,10 +3,8 @@
     Layout = "Master.cshtml";
 }
 <div class="container">
-    <div class="col-md-2 pull-left"></div>
-    <div class="col-md-2 pull-right"></div>
-    <div class="col-md-8">
-        @{ 
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+        @{
             var last10 = Model.Content.Descendants("BlogPost").OrderByDescending(b => b.CreateDate).Take(10);
         }
         @foreach (var item in last10)
@@ -14,12 +12,12 @@
             <div class="container-fluid blog-summary">
                 <h1>
                     @item.Name
-                <small> - @item.CreateDate.ToString()</small>
-            </h1>
-            @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
-            <div class="fader">
+                    <small> - @item.CreateDate.ToString()</small>
+                </h1>
+                @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
+                <div class="fader">
+                </div>
             </div>
-        </div>
         }
         <div class="container-fluid blog-summary">
             <div class="center-block">
@@ -77,5 +75,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> <!-- middle "content" div close-->
+</div> <!-- Container div close -->
 

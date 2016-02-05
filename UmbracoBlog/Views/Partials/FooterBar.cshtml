@@ -1,0 +1,52 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+
+@{
+    //get external links page (first one)
+    var externalLinksPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("Footerlinks")).FirstOrDefault();
+}
+
+
+<div class="container-fluid speedbump col-lg-8 col-lg-offset-2 col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1 col-xs-12 col-xs-offset-0">
+    <div class="col-md-4 col-sm-4 col-xs-12 speedbump-card">
+        <div class="speedbump-header">
+            Archive
+        </div>
+        <div class="speedbump-content columns-3">
+            <li>content</li>
+            <li>test1</li>
+            <li>test2</li>
+            <li>test3</li>
+            <li>test4</li>
+            <li>test5</li>
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 speedbump-card">
+        <div class="speedbump-header">
+            Something
+        </div>
+        <div class="speedbump-content">
+            content<br />
+            test<br />
+            test<br />
+        </div>
+    </div>
+    <div class="col-md-4 col-sm-4 col-xs-12 speedbump-card">
+        <div class="speedbump-header">
+            Useful Links:
+        </div>
+        <div class="speedbump-content">
+            <ul>
+                @if (externalLinksPage != null)
+            {
+                foreach (var item in externalLinksPage.AsDynamic().links)
+                {
+                    var linkUrl = (bool)item.isInternal ? Umbraco.NiceUrl(item.Value<int>("internal")) : item.link;
+                    var linkTarget = (bool)item.newWindow ? "_blank" : null;
+                        <li><a href="@linkUrl" target="@linkTarget">@item.caption</a></li>
+                    }
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">&nbsp;</div>

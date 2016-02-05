@@ -2995,6 +2995,7 @@
     <Content Include="umbraco\Xslt\Web.config" />
     <Content Include="Views\MacroPartials\Image Gallery.cshtml" />
     <Content Include="Views\BlogPost.cshtml" />
+    <Content Include="Views\Partials\FooterBar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
