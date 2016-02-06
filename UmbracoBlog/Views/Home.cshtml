@@ -2,84 +2,81 @@
 @{
     Layout = "Master.cshtml";
 }
-<div class="container">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 panel panel-default">
-        <div class="panel-body">
-            @{
-                var last10 = Model.Content.Descendants("BlogPost").OrderByDescending(b => b.CreateDate).Take(10);
-            }
-            @foreach (var item in last10)
+<div class="panel-body">
+    @{
+        var last10 = Model.Content.Descendants("BlogPost").OrderByDescending(b => b.CreateDate).Take(10);
+    }
+    @foreach (var item in last10)
             {
-                <div class="container-fluid blog-summary">
-                    <a href="@item.Url">
-                        <h1>
-                            @item.Name
-                            <small class="text-nowrap"> - @item.CreateDate.ToString()</small>
-                        </h1>
+        <div class="container-fluid blog-summary">
+            <a href="@item.Url">
+                <h1>
+                    @item.Name
+                    <small class="text-nowrap"> - @item.CreateDate.ToString()</small>
+                </h1>
 
-                        @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
-                        <div class="fader">
-                        </div>
-                    </a>
-                </div>
-            }
-            <div class="container-fluid blog-summary">
-                <div class="center-block">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis nulla consectetur, dignissim felis eu, ullamcorper nisi. Morbi imperdiet nibh at lacus mattis consectetur. Duis nec convallis felis. Ut massa neque, pellentesque et sollicitudin eu, ultricies vitae nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam efficitur elit ut arcu luctus, eget tempor neque pharetra. In vel massa dictum, aliquam velit a, fringilla lorem. Mauris ut condimentum ex. Sed auctor sapien sed volutpat pulvinar. Morbi placerat lacinia finibus. Proin eleifend bibendum mi sit amet maximus. Proin viverra lacus quis nunc congue gravida. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet sodales ligula id varius. Sed mattis erat sed sapien aliquet aliquet. Maecenas sem magna, mattis non sodales sed, facilisis eu nunc.
-                    <div class="fader">
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid blog-summary">
-                <p>
-                    Proin aliquam sapien ac ligula maximus, vitae commodo augue suscipit. Nullam leo eros, euismod sed fringilla non, efficitur nec ex. Nunc id fermentum arcu. Quisque nisi magna, semper quis lectus eu, sodales condimentum lectus. Etiam ligula sapien, vestibulum id pulvinar quis, dignissim eget arcu. In ac dolor lobortis, ullamcorper libero id, finibus orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas non erat sodales, molestie nunc vel, ornare nibh. Pellentesque sodales dolor placerat, imperdiet sem et, maximus velit. Integer lorem massa, feugiat vel interdum non, posuere ac nunc.
-                </p>
-                <p>
-                    Integer egestas nisi ut condimentum suscipit. Duis et varius felis. Proin fermentum orci eget augue pulvinar mollis. Integer at nulla porta nunc feugiat dignissim a quis augue. In pellentesque interdum rutrum. Curabitur blandit pulvinar est ac tempus. Nulla commodo, ante sit amet interdum placerat, dui nisl suscipit magna, vitae semper diam ipsum ac ante.
-                </p>
+                @Umbraco.Truncate(item.AsDynamic().bodyText, 600)
                 <div class="fader">
                 </div>
+            </a>
+        </div>
+    }
+    <div class="container-fluid blog-summary">
+        <div class="center-block">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum venenatis nulla consectetur, dignissim felis eu, ullamcorper nisi. Morbi imperdiet nibh at lacus mattis consectetur. Duis nec convallis felis. Ut massa neque, pellentesque et sollicitudin eu, ultricies vitae nulla. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam efficitur elit ut arcu luctus, eget tempor neque pharetra. In vel massa dictum, aliquam velit a, fringilla lorem. Mauris ut condimentum ex. Sed auctor sapien sed volutpat pulvinar. Morbi placerat lacinia finibus. Proin eleifend bibendum mi sit amet maximus. Proin viverra lacus quis nunc congue gravida. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet sodales ligula id varius. Sed mattis erat sed sapien aliquet aliquet. Maecenas sem magna, mattis non sodales sed, facilisis eu nunc.
+            <div class="fader">
             </div>
-            <div class="container-fluid blog-summary">
-                <div class="center-block">
-                    <p>
-                        Phasellus interdum dolor vel accumsan sollicitudin. Nam laoreet mauris sed facilisis blandit. Mauris in arcu justo. Praesent ut hendrerit metus, sit amet ullamcorper leo. Nulla sollicitudin et nulla vitae fringilla. Integer accumsan, lectus a laoreet ultrices, augue lacus porta ante, a auctor urna nunc in tellus. Vivamus metus augue, consequat nec efficitur iaculis, semper at elit. Praesent finibus, odio a sagittis placerat, est neque feugiat risus, elementum volutpat ipsum leo eu velit. Sed blandit at ipsum sed malesuada. Proin eget lectus nec tellus mattis tempor non ut nisl. Pellentesque ut quam sed dui scelerisque consectetur. Etiam aliquam mi in dui tempus euismod. Maecenas dolor leo, porta at sapien vel, viverra posuere lorem.
-                    </p>
-                    <p>
-                        Vivamus dictum ornare dolor, in gravida magna euismod vitae. Vivamus laoreet quis nunc at dapibus. Fusce eu metus nulla. Vestibulum sit amet convallis est. Etiam consequat blandit dolor eu efficitur. Cras sit amet condimentum magna, vel porttitor turpis. Nulla id dignissim magna, non tincidunt enim.
-                    </p>
-                    <p>
-                        Nulla sit amet congue eros, vel posuere odio. Maecenas eleifend, dui in fringilla cursus, sem metus sagittis lacus, at sagittis sem risus eu metus. Duis eget massa magna. Nam nec felis molestie, gravida eros quis, porta sem. Sed tempor diam lacus, eu elementum est tincidunt in. Integer aliquam quam felis. Sed ac erat magna.
-                    </p>
-                    <div class="fader">
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="container-fluid blog-summary">
+        <p>
+            Proin aliquam sapien ac ligula maximus, vitae commodo augue suscipit. Nullam leo eros, euismod sed fringilla non, efficitur nec ex. Nunc id fermentum arcu. Quisque nisi magna, semper quis lectus eu, sodales condimentum lectus. Etiam ligula sapien, vestibulum id pulvinar quis, dignissim eget arcu. In ac dolor lobortis, ullamcorper libero id, finibus orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas non erat sodales, molestie nunc vel, ornare nibh. Pellentesque sodales dolor placerat, imperdiet sem et, maximus velit. Integer lorem massa, feugiat vel interdum non, posuere ac nunc.
+        </p>
+        <p>
+            Integer egestas nisi ut condimentum suscipit. Duis et varius felis. Proin fermentum orci eget augue pulvinar mollis. Integer at nulla porta nunc feugiat dignissim a quis augue. In pellentesque interdum rutrum. Curabitur blandit pulvinar est ac tempus. Nulla commodo, ante sit amet interdum placerat, dui nisl suscipit magna, vitae semper diam ipsum ac ante.
+        </p>
+        <div class="fader">
+        </div>
+    </div>
+    <div class="container-fluid blog-summary">
+        <div class="center-block">
+            <p>
+                Phasellus interdum dolor vel accumsan sollicitudin. Nam laoreet mauris sed facilisis blandit. Mauris in arcu justo. Praesent ut hendrerit metus, sit amet ullamcorper leo. Nulla sollicitudin et nulla vitae fringilla. Integer accumsan, lectus a laoreet ultrices, augue lacus porta ante, a auctor urna nunc in tellus. Vivamus metus augue, consequat nec efficitur iaculis, semper at elit. Praesent finibus, odio a sagittis placerat, est neque feugiat risus, elementum volutpat ipsum leo eu velit. Sed blandit at ipsum sed malesuada. Proin eget lectus nec tellus mattis tempor non ut nisl. Pellentesque ut quam sed dui scelerisque consectetur. Etiam aliquam mi in dui tempus euismod. Maecenas dolor leo, porta at sapien vel, viverra posuere lorem.
+            </p>
+            <p>
+                Vivamus dictum ornare dolor, in gravida magna euismod vitae. Vivamus laoreet quis nunc at dapibus. Fusce eu metus nulla. Vestibulum sit amet convallis est. Etiam consequat blandit dolor eu efficitur. Cras sit amet condimentum magna, vel porttitor turpis. Nulla id dignissim magna, non tincidunt enim.
+            </p>
+            <p>
+                Nulla sit amet congue eros, vel posuere odio. Maecenas eleifend, dui in fringilla cursus, sem metus sagittis lacus, at sagittis sem risus eu metus. Duis eget massa magna. Nam nec felis molestie, gravida eros quis, porta sem. Sed tempor diam lacus, eu elementum est tincidunt in. Integer aliquam quam felis. Sed ac erat magna.
+            </p>
+            <div class="fader">
             </div>
-            <div class="container-fluid blog-summary">
-                <div class="center-block">
-                    <p>
-                        Fusce eget dui ut leo vulputate luctus ac sit amet ipsum. Pellentesque nec leo sit amet orci eleifend dapibus. Nullam molestie malesuada dignissim. Mauris iaculis rutrum justo id maximus. Fusce elit leo, iaculis eu luctus sit amet, semper sed massa. Proin consectetur ullamcorper sollicitudin. Suspendisse sagittis sapien purus, eget pretium nunc dapibus porta. Quisque at mollis est. Nunc interdum elit ut tortor laoreet pretium. Nullam rutrum facilisis ex et sollicitudin. Mauris lacinia eros ac rhoncus rutrum. Integer lacinia odio at mauris viverra luctus. Donec et odio eget orci dignissim rutrum at pharetra dui.
-                    </p>
-                    <p>
-                        Donec id nibh nec sem venenatis sollicitudin. Aliquam erat volutpat. Fusce efficitur dolor et mauris dictum pellentesque. Integer vel sodales velit, a mollis purus. Nullam vestibulum nibh leo, at lacinia justo semper ac. Fusce ac erat eros. Integer id orci faucibus, interdum urna id, accumsan nibh. Proin quis neque malesuada, porttitor lacus in, pharetra felis. Vivamus maximus ipsum sed ornare faucibus. Cras volutpat nec dolor scelerisque convallis. Maecenas ultrices, justo sed posuere maximus, risus justo eleifend nunc, pulvinar sagittis elit dolor a urna. Nam fringilla erat non sem volutpat scelerisque. Morbi quis euismod eros. Ut faucibus pharetra ante, id pulvinar dolor porta non. Aliquam imperdiet feugiat elit, a viverra lectus accumsan id. Maecenas sagittis purus et lobortis convallis.
-                    </p>
-                    <div class="fader">
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="container-fluid blog-summary">
+        <div class="center-block">
+            <p>
+                Fusce eget dui ut leo vulputate luctus ac sit amet ipsum. Pellentesque nec leo sit amet orci eleifend dapibus. Nullam molestie malesuada dignissim. Mauris iaculis rutrum justo id maximus. Fusce elit leo, iaculis eu luctus sit amet, semper sed massa. Proin consectetur ullamcorper sollicitudin. Suspendisse sagittis sapien purus, eget pretium nunc dapibus porta. Quisque at mollis est. Nunc interdum elit ut tortor laoreet pretium. Nullam rutrum facilisis ex et sollicitudin. Mauris lacinia eros ac rhoncus rutrum. Integer lacinia odio at mauris viverra luctus. Donec et odio eget orci dignissim rutrum at pharetra dui.
+            </p>
+            <p>
+                Donec id nibh nec sem venenatis sollicitudin. Aliquam erat volutpat. Fusce efficitur dolor et mauris dictum pellentesque. Integer vel sodales velit, a mollis purus. Nullam vestibulum nibh leo, at lacinia justo semper ac. Fusce ac erat eros. Integer id orci faucibus, interdum urna id, accumsan nibh. Proin quis neque malesuada, porttitor lacus in, pharetra felis. Vivamus maximus ipsum sed ornare faucibus. Cras volutpat nec dolor scelerisque convallis. Maecenas ultrices, justo sed posuere maximus, risus justo eleifend nunc, pulvinar sagittis elit dolor a urna. Nam fringilla erat non sem volutpat scelerisque. Morbi quis euismod eros. Ut faucibus pharetra ante, id pulvinar dolor porta non. Aliquam imperdiet feugiat elit, a viverra lectus accumsan id. Maecenas sagittis purus et lobortis convallis.
+            </p>
+            <div class="fader">
             </div>
-            <div class="container-fluid blog-summary">
-                <div class="center-block">
-                    <p>
-                        Donec cursus cursus volutpat. Nulla risus est, consectetur vel justo pellentesque, facilisis volutpat augue. Integer congue sit amet nulla id rhoncus. Fusce lacinia, lacus in gravida rhoncus, magna metus vulputate ipsum, et ullamcorper risus dui at orci. In hac habitasse platea dictumst. Sed suscipit vestibulum pellentesque. Curabitur cursus vel justo sed viverra. Sed maximus cursus mauris, at dapibus lacus rhoncus quis. Curabitur vel laoreet magna. Sed laoreet faucibus velit, nec faucibus tellus bibendum non. Aliquam a vulputate dui, id condimentum ligula. Integer non mi magna. Duis id felis enim. Fusce tellus lacus, ornare id ligula ac, ullamcorper aliquam nulla. Cras imperdiet metus quis mattis fringilla.
-                    </p>
-                    <p>
-                        Maecenas lectus lectus, ullamcorper ac ligula a, dapibus cursus neque. Vivamus ornare id libero eget dignissim. Cras quis massa in massa lobortis hendrerit. Morbi at augue molestie, pharetra purus id, varius risus. Curabitur id interdum orci. Proin fermentum est tortor, id lobortis sapien ullamcorper id. Curabitur convallis consequat orci, et lacinia risus volutpat sit amet. Sed efficitur laoreet nulla nec egestas. Mauris ac ante interdum, feugiat augue nec, suscipit ante. Sed sit amet leo quis ex laoreet tincidunt. Nullam eu tortor odio. Cras interdum varius felis, nec auctor erat volutpat non. Sed dictum magna elit, ut vestibulum nibh placerat sit amet.
-                    </p>
-                    <div class="fader">
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="container-fluid blog-summary">
+        <div class="center-block">
+            <p>
+                Donec cursus cursus volutpat. Nulla risus est, consectetur vel justo pellentesque, facilisis volutpat augue. Integer congue sit amet nulla id rhoncus. Fusce lacinia, lacus in gravida rhoncus, magna metus vulputate ipsum, et ullamcorper risus dui at orci. In hac habitasse platea dictumst. Sed suscipit vestibulum pellentesque. Curabitur cursus vel justo sed viverra. Sed maximus cursus mauris, at dapibus lacus rhoncus quis. Curabitur vel laoreet magna. Sed laoreet faucibus velit, nec faucibus tellus bibendum non. Aliquam a vulputate dui, id condimentum ligula. Integer non mi magna. Duis id felis enim. Fusce tellus lacus, ornare id ligula ac, ullamcorper aliquam nulla. Cras imperdiet metus quis mattis fringilla.
+            </p>
+            <p>
+                Maecenas lectus lectus, ullamcorper ac ligula a, dapibus cursus neque. Vivamus ornare id libero eget dignissim. Cras quis massa in massa lobortis hendrerit. Morbi at augue molestie, pharetra purus id, varius risus. Curabitur id interdum orci. Proin fermentum est tortor, id lobortis sapien ullamcorper id. Curabitur convallis consequat orci, et lacinia risus volutpat sit amet. Sed efficitur laoreet nulla nec egestas. Mauris ac ante interdum, feugiat augue nec, suscipit ante. Sed sit amet leo quis ex laoreet tincidunt. Nullam eu tortor odio. Cras interdum varius felis, nec auctor erat volutpat non. Sed dictum magna elit, ut vestibulum nibh placerat sit amet.
+            </p>
+            <div class="fader">
             </div>
-        </div>  <!-- Panel close -->
-    </div> <!-- "content" div close-->
-</div> <!-- Container div close -->
+        </div>
+    </div>
+</div>  <!-- Panel close -->
+
 

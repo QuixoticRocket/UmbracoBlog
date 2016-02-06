@@ -3005,6 +3005,8 @@
     <Content Include="Views\StaticInformation.cshtml" />
     <Content Include="Views\AboutPage.cshtml" />
     <Content Include="uSync\data\DocumentType\master\home\aboutpage\def.config" />
+    <Content Include="Views\Partials\SocialBar.cshtml" />
+    <Content Include="uSync\data\Template\socialbar\SocialBar.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

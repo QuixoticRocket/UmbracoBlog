@@ -3,37 +3,34 @@
     Layout = "Master.cshtml";
 }
 
+
+<div class="panel-heading">
+    <h1>
+        @CurrentPage.Name
+        <small class="text-nowrap"> - @CurrentPage.CreateDate.ToString()</small>
+    </h1>
+</div>
+<div class="panel-body">
+    @CurrentPage.bodyText
+</div>
 <div class="container">
-    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 col-xs-12 col-xs-offset-0 panel panel-default">
-        <div class="panel-heading">
-            <h1>
-                @CurrentPage.Name
-                <small class="text-nowrap"> - @CurrentPage.CreateDate.ToString()</small>
-            </h1>
-        </div>
-        <div class="panel-body">
-            @CurrentPage.bodyText
-        </div>
-        <div class="container">
-            @{
-                string[] tags = string.IsNullOrWhiteSpace(CurrentPage.contentTags) ? new string[0] : CurrentPage.contentTags.Split(',');
-                tags = tags.OrderBy(x => x).ToArray();
-                if (tags.Length > 0)
+    @{
+        string[] tags = string.IsNullOrWhiteSpace(CurrentPage.contentTags) ? new string[0] : CurrentPage.contentTags.Split(',');
+        tags = tags.OrderBy(x => x).ToArray();
+        if (tags.Length > 0)
+        {
+            <span>Tags: </span>
+            for (int i = 0; i < tags.Length; i++)
+            {
+                if (i != tags.Length - 1)
                 {
-                    <span>Tags: </span>
-                    for (int i = 0; i < tags.Length; i++)
-                    {
-                        if (i != tags.Length - 1)
-                        {
-                            <span><a href="~/Search?query=@tags[i]">@tags[i]</a>, </span>
-                        }
-                        else
-                        {
-                            <span><a href="~/Search?query=@tags[i]">@tags[i]</a></span>
-                        }
-                    }
+                    <span><a href="~/Search?query=@tags[i]">@tags[i]</a>, </span>
+                }
+                else
+                {
+                    <span><a href="~/Search?query=@tags[i]">@tags[i]</a></span>
                 }
             }
-        </div>
-    </div>
+        }
+    }
 </div>

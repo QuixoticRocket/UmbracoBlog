@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var staticInfoPage = Model.Content.AncestorOrSelf(1).Children(x => x.DocumentTypeAlias.Equals("StaticInformation")).FirstOrDefault();
+}
+@if (staticInfoPage != null && staticInfoPage.GetPropertyValue<bool>("showSocialMediaLinks"))
+{
+    <div class="hidden-xs social-bar">
+        <div class="panel panel-default" style="padding-left: 5px; padding-right: 5px;">
+            <ul class="media-list">
+                @checkPropertyAndCreateHtml(staticInfoPage, "twitterLink", "twitter", "twitter")
+                @checkPropertyAndCreateHtml(staticInfoPage, "facebookLink", "facebook", "facebook")
+                @checkPropertyAndCreateHtml(staticInfoPage, "instagramLink", "instagram", "instagram")
+                @checkPropertyAndCreateHtml(staticInfoPage, "githubLink", "github", "github")
+            </ul>
+        </div>
+    </div>
+
+    <div class="visible-xs hidden-sm col-xs-12 col-xs-offset-0 panel panel-default social-bar-small text-nowrap">
+        @checkPropertyAndCreateHtml(staticInfoPage, "twitterLink", "twitter", "twitter", true)
+        @checkPropertyAndCreateHtml(staticInfoPage, "facebookLink", "facebook", "facebook", true)
+        @checkPropertyAndCreateHtml(staticInfoPage, "instagramLink", "instagram", "instagram", true)
+        @checkPropertyAndCreateHtml(staticInfoPage, "githubLink", "github", "github", true)
+    </div>
+}
+
+@helper checkPropertyAndCreateHtml(IPublishedContent page, string propertyName, string iconName, string linkText, bool isSmallBar = false)
+{
+    if (page == null)
+    {
+        return;
+    }
+    if (page.HasValue(propertyName))
+    {
+        string url = page.GetPropertyValue<string>(propertyName);
+        if (isSmallBar)
+        {
+                <span class="text-nowrap">@createAnchor(url, iconName, linkText)</span>
+        }
+        else
+        {
+                <li>@createAnchor(url, iconName, linkText)</li>
+        }
+    }
+}
+
+
+@helper createAnchor(string url, string iconName, string linkText)
+{
+    <a href="@url" target="_blank"><i class="fa fa-@iconName fa-lg"></i> @linkText</a>
+}

@@ -75,6 +75,42 @@ div.profile-image-small {
         opacity: 0.65;
     }
 
+div.social-bar {
+    position: relative;
+    width: auto;
+    float: left;
+    margin-left: 20px;
+    margin-right: -50px;
+}
+
+    div.social-bar ul li a {
+        text-decoration: none;
+        color: #337ab7;
+    }
+
+        div.social-bar ul li a:hover {
+            text-decoration: none;
+            color: #689ac1;
+        }
+
+div.social-bar-small {
+    width: 100%;
+    overflow-x: scroll;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+    div.social-bar-small a {
+        text-decoration: none;
+        color: #337ab7;
+    }
+
+        div.social-bar-small a:hover {
+            text-decoration: none;
+            color: #689ac1;
+        }
+
+
 div.speedbump {
     padding-left: 0;
     padding-right: 0;
